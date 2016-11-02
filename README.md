@@ -1,4 +1,5 @@
 #Setup
+```
 npm init
 
 npm install --save react
@@ -11,7 +12,7 @@ npm install --save-dev babel-loader
 npm install --save-dev babel-core
 npm install --save-dev babel-preset-es2015
 npm install --save-dev babel-preset-react
-
+```
 /*webpack config*/
 #webpack.config.js
 ```
@@ -38,11 +39,11 @@ module.exports = {
 
 /*Run webpack*/
 #server mode
-```sh
+```
 webpack-dev-server --progress --colors
 ```
 #build/normal mode
-```sh
+```
 webpack --progress --colors
 ```
 //#always declare static to exported functions
