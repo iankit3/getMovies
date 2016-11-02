@@ -1,0 +1,11 @@
+.header{
+    width:90%;
+    margin: auto;
+}
+
+.list-wrapper{
+  border:2px solid #222;
+  height: 400px;
+  width: 90%;
+  margin: auto;   
+}
