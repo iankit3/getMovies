@@ -21531,7 +21531,7 @@
 	        _react2.default.createElement(
 	          "h2",
 	          null,
-	          "Header for the application"
+	          "Movies currently in-Theaters"
 	        )
 	      );
 	    }
@@ -21602,19 +21602,12 @@
 	        key: 'render',
 	        value: function render() {
 	            //var ELEM = this.state.data.map( (e) =>  )
+	            //  <button type="button" onClick={this.getData.bind(this)}>getData</button>
+	            //  <h3>{this.state.name}</h3>
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'list-wrapper' },
-	                _react2.default.createElement(
-	                    'button',
-	                    { type: 'button', onClick: this.getData.bind(this) },
-	                    'getData'
-	                ),
-	                _react2.default.createElement(
-	                    'h3',
-	                    null,
-	                    this.state.name
-	                )
+	                _react2.default.createElement(_elemComponent2.default, null)
 	            );
 	        }
 	    }]);
@@ -21640,6 +21633,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _dataService = __webpack_require__(176);
+
+	var _dataService2 = _interopRequireDefault(_dataService);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21656,16 +21653,70 @@
 	    function Elem() {
 	        _classCallCheck(this, Elem);
 
-	        return _possibleConstructorReturn(this, (Elem.__proto__ || Object.getPrototypeOf(Elem)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (Elem.__proto__ || Object.getPrototypeOf(Elem)).call(this));
+
+	        _this.state = {
+	            data: []
+	        };
+	        return _this;
 	    }
 
 	    _createClass(Elem, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var _this2 = this;
+
+	            _dataService2.default.getData(URL).then(function (res) {
+	                return _this2.setState({ data: res.data.inTheaters[1].movies });
+	            });
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var data = this.state.data;
+
 	            return _react2.default.createElement(
-	                'h4',
+	                'div',
 	                null,
-	                'I am a elem of the list'
+	                data.map(function (e) {
+	                    return _react2.default.createElement(
+	                        'div',
+	                        { key: e.idIMDB, className: 'elem' },
+	                        _react2.default.createElement(
+	                            'a',
+	                            { className: 'mv-card', target: '_blank', href: e.urlIMDB },
+	                            _react2.default.createElement('img', { src: e.urlPoster, alt: e.title })
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'mv-details' },
+	                            _react2.default.createElement(
+	                                'h2',
+	                                null,
+	                                'Title: ',
+	                                e.title
+	                            ),
+	                            _react2.default.createElement(
+	                                'em',
+	                                null,
+	                                'Year: ',
+	                                e.year
+	                            ),
+	                            ' Rating',
+	                            _react2.default.createElement(
+	                                'code',
+	                                null,
+	                                ' ',
+	                                e.rating
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                e.simplePlot
+	                            )
+	                        )
+	                    );
+	                })
 	            );
 	        }
 	    }]);

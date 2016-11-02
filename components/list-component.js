@@ -18,10 +18,11 @@ class List extends React.Component{
 
   render(){
       //var ELEM = this.state.data.map( (e) =>  )
+            //  <button type="button" onClick={this.getData.bind(this)}>getData</button>
+            //  <h3>{this.state.name}</h3>
       return(
           <div className="list-wrapper">
-             <button type="button" onClick={this.getData.bind(this)}>getData</button>
-             <h3>{this.state.name}</h3>
+             <Elem />
           </div>
       )
   }

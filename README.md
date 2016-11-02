@@ -46,4 +46,5 @@ webpack-dev-server --progress --colors
 ```
 webpack --progress --colors
 ```
-//#always declare static to exported functions
+#Note
+always declare static to exported functions
