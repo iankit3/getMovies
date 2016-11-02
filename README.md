@@ -1,4 +1,4 @@
-#setup
+#Setup
 npm init
 
 npm install --save react
@@ -14,7 +14,7 @@ npm install --save-dev babel-preset-react
 
 /*webpack config*/
 #webpack.config.js
-
+```
 var path = require('path');
 var webpack = require('webpack');
 
@@ -34,14 +34,15 @@ module.exports = {
     ]
   },
 };
+```
 
 /*Run webpack*/
 #server mode
-
+```sh
 webpack-dev-server --progress --colors
-
+```
 #build/normal mode
-
+```sh
 webpack --progress --colors
-
-#always declare static to exported functions
+```
+//#always declare static to exported functions
