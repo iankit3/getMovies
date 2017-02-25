@@ -76,5 +76,10 @@ always declare static to exported functions
 
 7. ``` git push origin master  ```
 
+8. If mistakenly added gitignore after ```git --add```
+  
+    ``` git rm -r --cached node_modules ``` 
+   ``` git commit -m "removing node_modules ```
+
 
 
