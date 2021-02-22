@@ -1,4 +1,4 @@
-#Setup
+# Setup
 ```
 npm init
 
@@ -14,7 +14,7 @@ npm install --save-dev babel-preset-es2015
 npm install --save-dev babel-preset-react
 ```
 /*webpack config*/
-#webpack.config.js
+# webpack.config.js
 ```
 var path = require('path');
 var webpack = require('webpack');
@@ -37,26 +37,26 @@ module.exports = {
 };
 ```
 
-#add eslint
+# add eslint
 ```
  npm install -g eslint
  eslint --init
 ```
 
 /*Run webpack*/
-#server mode
+# server mode
 ```
 webpack-dev-server --progress --colors
 ```
-#build/normal mode
+# build/normal mode
 ```
 webpack --progress --colors
 ```
-#Note
+# Note
 always declare static to exported functions
 
 
-#Move to github
+# Move to github
 1. Create a new repository on GitHub. To avoid errors, do not initialize the new repository with README, license, or    
    gitignore files. You can add these files after your project has been pushed to GitHub.
    --  In .gitignore
